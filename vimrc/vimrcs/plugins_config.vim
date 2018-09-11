@@ -169,4 +169,10 @@ nnoremap <silent> <leader>d :GitGutterToggle<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Relative numbering 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
+:set number relativenumber
+
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
