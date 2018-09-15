@@ -578,7 +578,7 @@ else
 endif
 
 
-" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
+" Map <Space> to / (search)
 map <space> /
 
 
@@ -592,9 +592,6 @@ map <space> /
 :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
-
-" search for file
-map <leader>j :CtrlP<cr>
 
 
 
