@@ -43,10 +43,12 @@ Plug 'vim-scripts/CSApprox'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
+Plug 'mileszs/ack.vim'
 Plug 'scrooloose/syntastic'
 Plug 'Yggdroot/indentLine'
 Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
+
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 else
@@ -103,7 +105,7 @@ Plug 'jelera/vim-javascript-syntax'
 "" Python Bundle
 Plug 'davidhalter/jedi-vim'
 Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
-
+Plug 'Valloric/YouCompleteMe'
 
 " rust
 " Vim racer
@@ -146,6 +148,9 @@ set tabstop=4
 set softtabstop=0
 set shiftwidth=4
 set expandtab
+
+"" Install supertab
+Plug 'ervandew/supertab'
 
 "" Map leader to ,
 let mapleader=','
@@ -499,18 +504,19 @@ augroup vimrc-python
 augroup END
 
 " jedi-vim
-let g:jedi#popup_on_dot = 0
+let g:jedi#popup_on_dot = 1
 let g:jedi#goto_assignments_command = "<leader>g"
 let g:jedi#goto_definitions_command = "<leader>d"
 let g:jedi#documentation_command = "K"
 let g:jedi#usages_command = "<leader>n"
 let g:jedi#rename_command = "<leader>r"
-let g:jedi#show_call_signatures = "0"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#smart_auto_mappings = 0
+let g:jedi#auto_initialization = 1
+let g:jedi#use_tabs_not_buffers = 1
 
 " syntastic
-let g:syntastic_python_checkers=['python', 'flake8']
+let g:syntastic_python_checkers=['python']
 
 " vim-airline
 let g:airline#extensions#virtualenv#enabled = 1
@@ -578,7 +584,7 @@ else
 endif
 
 
-" Map <Space> to / (search)
+" Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
 
 
@@ -592,9 +598,5 @@ map <space> /
 :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
-
-
-
-
 
 

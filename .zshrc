@@ -109,5 +109,6 @@ alias lock="i3lock -c 000000";
 alias only_second_display="xrandr --output eDP-1 --off";
 alias volume_u="amixer -D pulse sset Master 5%+"
 alias volume_d="amixer -D pulse sset Master 5%-"
+alias set_date_time="sudo dpkg-reconfigure tzdata"
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
