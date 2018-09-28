@@ -599,4 +599,4 @@ map <space> /
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
 
-
+vmap <C-c> y: call system("xclip -i -selection clipboard", getreg("\""))<CR>
