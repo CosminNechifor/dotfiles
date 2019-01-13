@@ -7,18 +7,15 @@ setup() {
 	cp $DIR_LOCATION/.tmux.conf ~/
 	cp $DIR_LOCATION/.zshrc ~/
 	cp -r $DIR_LOCATION/nvim ~/$CONFIG
-	echo "setup"
 }
 
 create_config_dir() {
 	cd
 	mkdir $CONFIG 
-	echo "create config dir"
 }
 
 create_nvim_dir() {
 	mkdir ~/$CONFIG/$NVIM
-	echo "create nvim dir"
 }
 
 if [ ! -d "/home/$USER/$CONFIG" ]
