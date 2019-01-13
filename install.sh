@@ -1,7 +1,13 @@
-CONFIG=".ttest" 
+CONFIG=".config" 
 NVIM="nvim"
 
 DIR_LOCATION=$PWD
+
+# install_software() {
+# 	sudo pacman -S tmux
+# 	sudo pacman -S nvim
+# 	sudo pacman -S zsh
+# }
 
 setup() {
 	cp $DIR_LOCATION/.tmux.conf ~/
