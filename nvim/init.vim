@@ -718,11 +718,12 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'zchee/deoplete-jedi'
     
     Plug 'davidhalter/jedi-vim'
+
     let g:jedi#auto_vim_configuration = 0
 	let g:jedi#goto_assignments_command = "<leader>g"
 	let g:jedi#goto_definitions_command = "<leader>d"
     let g:jedi#use_tabs_not_buffers = 0  " current default is 1.
-    let g:jedi#rename_command = '<Leader>gR'
+    let g:jedi#rename_command = '<Leader>gr'
     let g:jedi#usages_command = '<Leader>gu'
     let g:jedi#completions_enabled = 0
     let g:jedi#smart_auto_mappings = 1
@@ -730,6 +731,11 @@ call plug#begin('~/.config/nvim/plugged')
     " Unite/ref and pydoc are more useful.
     let g:jedi#documentation_command = '<Leader>_K'
     let g:jedi#auto_close_doc = 1
+
+    Plug 'tomlion/vim-solidity'
+
+    Plug 'mileszs/ack.vim'
+
 call plug#end()
 
 " Colorscheme and final setup {{{
