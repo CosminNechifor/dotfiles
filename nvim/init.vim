@@ -735,6 +735,8 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tomlion/vim-solidity'
 
     Plug 'mileszs/ack.vim'
+    nmap <leader>a :tab split<CR>:Ack ""<Left> 
+	nmap <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
 
 call plug#end()
 
