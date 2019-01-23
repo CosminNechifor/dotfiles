@@ -15,8 +15,22 @@ call plug#begin('~/.config/nvim/plugged')
     abbr attribtue attribute
     abbr attribuet attribute
 
+    cnoreabbrev W! w!
+    cnoreabbrev Q! q!
+    cnoreabbrev Qall! qall!
+    cnoreabbrev Wq wq
+    cnoreabbrev Wa wa
+    cnoreabbrev wQ wq
+    cnoreabbrev WQ wq
+    cnoreabbrev W w
+    cnoreabbrev Q q
+    cnoreabbrev Qall qall
+ 
+
+
     set autoread " detect when a file is changed
 
+    set number relativenumber
     set history=1000 " change history to 1000
     set textwidth=120
 
@@ -735,7 +749,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tomlion/vim-solidity'
 
     Plug 'mileszs/ack.vim'
-    nmap <leader>a :tab split<CR>:Ack ""<Left> 
+    nmap <leader>a :Ack ""<Left> 
 	nmap <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
 
 call plug#end()
