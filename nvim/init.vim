@@ -453,7 +453,6 @@ call plug#begin('~/.config/nvim/plugged')
 
     " Close buffers but keep splits
     Plug 'moll/vim-bbye'
-    nmap <leader>b :Bdelete<cr>
 
     " Writing in vim {{{{
         Plug 'junegunn/goyo.vim'
@@ -550,7 +549,8 @@ call plug#begin('~/.config/nvim/plugged')
         endif
 
         nmap <silent> <leader>s :GFiles?<cr>
-        nmap <silent> <leader>r :Buffers<cr>
+        nmap <silent> <leader>b :Buffers<cr>
+        nmap <silent> <leader>rr :Semshi rename<CR>
         nmap <silent> <leader>e :FZF<cr>
         nmap <leader><tab> <plug>(fzf-maps-n)
         xmap <leader><tab> <plug>(fzf-maps-x)
@@ -750,8 +750,10 @@ call plug#begin('~/.config/nvim/plugged')
 
     Plug 'mileszs/ack.vim'
     nmap <leader>a :Ack ""<Left> 
-	nmap <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
+    nmap <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
 
+    
+    Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 call plug#end()
 
 " Colorscheme and final setup {{{
