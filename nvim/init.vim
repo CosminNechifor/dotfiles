@@ -197,7 +197,7 @@ call plug#begin('~/.config/nvim/plugged')
         function! LightlineFileFormat()
             " only show the file format if it's not 'unix'
             let format = &fileformat == 'unix' ? '' : &fileformat
-            return winwidth(0) > 70 ? format . ' ' . WebDevIconsGetFileFormatSymbol() : ''
+            return winwidth(0) > 70 ? format : ''
         endfunction
 
         function! LightlineFileType()
@@ -252,8 +252,13 @@ call plug#begin('~/.config/nvim/plugged')
     inoremap jk <esc>
 
     " shortcut to save
-    nmap <leader>, :w<cr>
+    " nmap <leader>, :w<cr>
     vmap <C-c> y: call system("xclip -i -selection clipboard", getreg("\""))<CR>
+
+	" control s to save something
+	nmap <c-s> :w<CR>
+	imap <c-s> <Esc>:w<CR>a
+
     " set paste toggle
     set pastetoggle=<leader>v
 
@@ -515,7 +520,7 @@ call plug#begin('~/.config/nvim/plugged')
         endfunction
         " toggle nerd tree
         nmap <silent> <leader>k :call ToggleNerdTree()<cr>
-        " find the current file in nerdtree without needing to reload the drawer
+        " find the current file in nerdtree without needing to reload the tdrawer
         nmap <silent> <leader>y :NERDTreeFind<cr>
 
         let NERDTreeShowHidden=1
