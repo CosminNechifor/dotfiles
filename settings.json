@@ -1,13 +1,17 @@
 {
     "workbench.activityBar.visible": false,
     "workbench.statusBar.feedback.visible": false,
-    "window.zoomLevel": -1,
+    "python.pythonPath": "/home/cosmin/.virtualenvs/raiden/bin/python",
+    "window.zoomLevel": 0,
     "editor.minimap.enabled": false,
+    "vim.leader": ",",
     "vim.handleKeys": {
         "<C-d>": true,
         "<C-f>": false,
         "<C-w>": false,
         "<C-a>": false,
+        "<C-n>": false,
+        "<C-b>": false,
     },
     "workbench.statusBar.visible": true,
     
@@ -40,5 +44,14 @@
              "workbench.action.splitEditorDown"
          ]
      },
+    ],
+    "window.menuBarVisibility": "default",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "u"],
+            "commands": [
+                "references-view.find"
+            ]
+        }
     ]
 }
