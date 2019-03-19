@@ -26,8 +26,6 @@ call plug#begin('~/.config/nvim/plugged')
     cnoreabbrev Q q
     cnoreabbrev Qall qall
  
-
-
     set autoread " detect when a file is changed
 
     set number relativenumber
@@ -134,6 +132,7 @@ call plug#begin('~/.config/nvim/plugged')
     " Load colorschemes
     Plug 'chriskempson/base16-vim'
     Plug 'joshdick/onedark.vim'
+
 
     " LightLine {{{
         Plug 'itchyny/lightline.vim'
@@ -302,8 +301,8 @@ call plug#begin('~/.config/nvim/plugged')
     map <silent> <C-k> :call functions#WinMove('k')<cr>
     map <silent> <C-l> :call functions#WinMove('l')<cr>
 
-    map <leader>wc :wincmd q<cr>
-
+    map <C-w> :wincmd q<cr>
+	
     " move line mappings
     " ∆ is <A-j> on macOS
     " ˚ is <A-k> on macOS
@@ -413,6 +412,9 @@ call plug#begin('~/.config/nvim/plugged')
 
     " detect indent style (tabs vs. spaces)
     Plug 'tpope/vim-sleuth'
+    
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	let g:deoplete#enable_at_startup = 1
 
     " Startify: Fancy startup screen for vim {{{
         Plug 'mhinz/vim-startify'
@@ -519,7 +521,7 @@ call plug#begin('~/.config/nvim/plugged')
             endif
         endfunction
         " toggle nerd tree
-        nmap <silent> <leader>k :call ToggleNerdTree()<cr>
+        nmap <silent> <A-1> :call ToggleNerdTree()<cr>
         " find the current file in nerdtree without needing to reload the tdrawer
         nmap <silent> <leader>y :NERDTreeFind<cr>
 
@@ -556,7 +558,7 @@ call plug#begin('~/.config/nvim/plugged')
         nmap <silent> <leader>s :GFiles?<cr>
         nmap <silent> <leader>b :Buffers<cr>
         nmap <silent> <leader>rr :Semshi rename<CR>
-        nmap <silent> <leader>e :FZF<cr>
+        nmap <silent> <C-p> :FZF<cr>
         nmap <leader><tab> <plug>(fzf-maps-n)
         xmap <leader><tab> <plug>(fzf-maps-x)
         omap <leader><tab> <plug>(fzf-maps-o)
@@ -600,6 +602,11 @@ call plug#begin('~/.config/nvim/plugged')
         let g:signify_sign_delete_first_line = '‾'
         let g:signify_sign_change = '!'
     " }}}
+    
+    " solidity {{{
+        Plug 'dmdque/solidity.vim'
+    " }}}
+
 
     " vim-fugitive {{{
         Plug 'tpope/vim-fugitive'
@@ -623,7 +630,7 @@ call plug#begin('~/.config/nvim/plugged')
         let g:ale_echo_msg_error_str = '✖'
         let g:ale_echo_msg_warning_str = '⚠'
         let g:ale_echo_msg_format = '%severity% %s% [%linter%% code%]'
-        let g:ale_completion_enabled = 1
+        let g:ale_completion_enabled = 0 
 
         let g:ale_linters = {
         \   'javascript': ['eslint', 'tsserver'],
@@ -682,6 +689,7 @@ call plug#begin('~/.config/nvim/plugged')
     " }}}
 
     " JavaScript {{{
+        Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
         Plug 'othree/yajs.vim', { 'for': [ 'javascript', 'javascript.jsx', 'html' ] }
         " Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'html'] }
         Plug 'moll/vim-node', { 'for': 'javascript' }
@@ -756,8 +764,12 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'mileszs/ack.vim'
     nmap <leader>a :Ack ""<Left> 
     nmap <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
+	
+    Plug 'majutsushi/tagbar'
+    nmap <F9> :TagbarToggle<CR>
 
-    
+    xnoremap < <gv
+    xnoremap > >gv
     Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 call plug#end()
 
