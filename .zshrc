@@ -105,7 +105,6 @@ export NVM_DIR="$HOME/.nvm"
 alias cd_raiden='cd /home/cosmin/Documents/github/work/raiden'
 alias wr='workon raiden'
 alias move_learning='cd /home/cosmin/Documents/github/learning';
-alias activate_vpn='cd /home/cosmin/Documents/utility/VPN && sudo openvpn --config gw-UDP4-1196-cosmin.ams3.do.brainbot.com-config.ovpn';
 alias weather='curl wttr.in/Cluj'
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
