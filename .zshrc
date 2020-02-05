@@ -64,6 +64,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -105,14 +106,43 @@ export NVM_DIR="$HOME/.nvm"
 alias cd_raiden='cd /home/cosmin/Documents/github/work/raiden'
 alias wr='workon raiden'
 alias move_learning='cd /home/cosmin/Documents/github/learning';
+alias activate_vpn='cd /home/cosmin/Documents/utility/VPN && sudo openvpn --config gw-UDP4-1196-cosmin.ams3.do.brainbot.com-config.ovpn';
 alias weather='curl wttr.in/Cluj'
-export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_HOME='/opt/android-sdk'
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-alias lic='cd /home/cosmin/Documents/github/learning/circular-economy';
+export PATH=$PATH:/Downloads/1.2.131.1/setup-env.sh
+alias lic='cd /home/cosmin/Documents/github/learning/licenta/IKHNAIE';
+alias ganache='/home/cosmin/Documents/github/learning/licenta/ganache-1.2.2-x86_64.AppImage';
 alias performance_mode='sudo smbios-thermal-ctl --set-thermal-mode=Performance'
 alias balanced_mode='sudo smbios-thermal-ctl --set-thermal-mode=Balanced'
+alias lic_code='cd /home/cosmin/Documents/github/learning/circular-economy && code .'
 
+alias DAW='cd /home/cosmin/Documents/github/learning/university/DAW'
 
+export PATH="/home/cosmin/.gem/ruby/2.6.0/bin:$PATH"
+export PATH="$PATH:/path/to/elixir/bin"
+export EDITOR='nvim'
+source ~/.bin/tmuxinator.zsh;
+
+alias ws="i3-msg workspace 3; i3-msg exec /usr/bin/chromium; i3-msg workspace 1; i3-msg exec /usr/bin/terminal; i3-msg workspace 8; i3-msg exec /usr/bin/spotify; exec i3-msg workspace 1;";
+alias tags="ctags -R --exclude=.git --exclude=node_modules --exclude=package.json";
+alias graph="git log --all --decorate --oneline --graph";
+alias ks="git stash";
+
+alias shake="adb shell input keyevent 82";
+alias reload="adb shell input keyevent 82; adb shell input keyevent 19; adb shell input keyevent 23;";
+alias mount_alo="sudo mount 192.168.1.9:/var/www/html /home/cosmin/Documents/work/dev";
+alias umount_alo="sudo umount /home/cosmin/Documents/work/dev";
+alias lk="keylogger --log-file ~/.keylogger.log &"
+alias open="pcmanfm ."
+alias gpom="echo 'git push origin master'; git push origin master"
+alias teamv="/home/cosmin/Downloads/teamviewer/teamviewer/teamviewer"
+export SLACK_TOKEN="xoxp-180690228519-715010133862-918196961602-27c4b2a00c10599a9d523c23d442febc"
+export SLACK_BOT_TOKEN="xoxp-180690228519-715010133862-918196961602-27c4b2a00c10599a9d523c23d442febc"
+alias slack_apk_plopeanu="slack-cli -f /home/cosmin/Documents/work/plopeanu_v2/android/app/build/outputs/apk/release/plopeanu-v0.1.0.apk -d apk"
+alias init_slack= 'eval "$(register-python-argcomplete slack-cli)"'
+alias python3=python3
+alias cdb='cd ./android/app/build/outputs/apk/release'
