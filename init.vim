@@ -112,13 +112,6 @@ call plug#begin('~/.config/nvim/plugged')
     " toggle invisible characters
     set showbreak=↪
 
-    " set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
-    " switch cursor to line when in insert mode, and block when not
-	
-    " set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
-    " \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
-    " \,sm:block-blinkwait175-blinkoff150-blinkon175
-
     if exists('+termguicolors')
         let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
         let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -128,9 +121,7 @@ call plug#begin('~/.config/nvim/plugged')
     " highlight conflicts
     match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
-    " Load colorschemes
     Plug 'Yggdroot/indentLine'
-    Plug 'phanviet/vim-monokai-pro'
 
 
 
@@ -742,6 +733,10 @@ call plug#end()
     " avtivate lightline
     let g:rigel_lightline = 1
     let g:lightline = { 'colorscheme': 'rigel' }
+    let g:indentLine_color_gui = '#152238'
+
+    " indentLine
+    let g:indentLine_char_list = ['|']
 
     " make comments and HTML attributes italic
     highlight Comment cterm=italic term=italic gui=italic
@@ -749,7 +744,8 @@ call plug#end()
     highlight xmlAttrib cterm=italic term=italic gui=italic
     " highlight Type cterm=italic term=italic gui=italic
     highlight Normal ctermbg=none
-
+    " fix cursor
+    highlight! link MatchParen StatusLine 
 " }}}
 
 
