@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/cosmin/Documents/temp/AwesomeProject'
-let g:netrw_dirhist_2='/home/cosmin/Documents/github/work/raiden'
-let g:netrw_dirhist_3='/home/cosmin/Documents/github/learning/Ginna'
-let g:netrw_dirhist_4='/home/cosmin/Documents/github/work/raiden'
-let g:netrw_dirhist_5='/home/cosmin/Documents/github/work/raiden/.circleci'
-let g:netrw_dirhist_6='/home/cosmin/Documents/github/work/raiden'

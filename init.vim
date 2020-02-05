@@ -28,12 +28,20 @@ call plug#begin('~/.config/nvim/plugged')
  
     set autoread " detect when a file is changed
 
-    set number relativenumber
+    " === TAB/Space settings === "
+    " Insert spaces when TAB is pressed.
+    set expandtab
+
+    command! MakeTags ! ctags -R --exclude=.git --exclude=node_modules --exclude=package.json --exclude=./build > tags
+
+
+    " set number relativenumber
     set history=1000 " change history to 1000
     set textwidth=120
 
     set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
     set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
 
     if (has('nvim'))
         " show results of substition as they're happening
@@ -66,9 +74,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Appearance {{{
     set number " show line numbers
-    set wrap " turn on line wrapping
-    set wrapmargin=8 " wrap lines when coming within n characters from side
-    set linebreak " set soft wrapping
+	set nowrap
     set showbreak=… " show ellipsis at breaking
     set autoindent " automatically set indent of new line
     set ttyfast " faster redrawing
@@ -79,6 +85,8 @@ call plug#begin('~/.config/nvim/plugged')
     set hidden " current buffer can be put into background
     set showcmd " show incomplete commands
     set noshowmode " don't show which mode disabled for PowerLine
+    " set cursorline
+    " set cursorcolumn
     set wildmode=list:longest " complete files like a shell
     set shell=$SHELL
     set cmdheight=1 " command bar height
@@ -102,27 +110,18 @@ call plug#begin('~/.config/nvim/plugged')
     set foldlevel=1
 
     " toggle invisible characters
-    set list
-    set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
     set showbreak=↪
 
-    set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
+    " set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
     " switch cursor to line when in insert mode, and block when not
-    set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
-    \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
-    \,sm:block-blinkwait175-blinkoff150-blinkon175
+	
+    " set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+    " \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+    " \,sm:block-blinkwait175-blinkoff150-blinkon175
 
-    if &term =~ '256color'
-        " disable background color erase
-        set t_ut=
-    endif
-
-    " enable 24 bit color support if supported
-    if (has("termguicolors"))
-        if (!(has("nvim")))
-            let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-            let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-        endif
+    if exists('+termguicolors')
+        let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
         set termguicolors
     endif
 
@@ -130,8 +129,9 @@ call plug#begin('~/.config/nvim/plugged')
     match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
     " Load colorschemes
-    Plug 'chriskempson/base16-vim'
-    Plug 'joshdick/onedark.vim'
+    Plug 'Yggdroot/indentLine'
+    Plug 'phanviet/vim-monokai-pro'
+
 
 
     " LightLine {{{
@@ -231,10 +231,7 @@ call plug#begin('~/.config/nvim/plugged')
         endfunction
 
         function! LightlineUpdate()
-            if g:goyo_entered == 0
-                " do not update lightline if in Goyo mode
-                call lightline#update()
-            endif
+            call lightline#update()
         endfunction
 
         augroup alestatus
@@ -254,9 +251,9 @@ call plug#begin('~/.config/nvim/plugged')
     " nmap <leader>, :w<cr>
     vmap <C-c> y: call system("xclip -i -selection clipboard", getreg("\""))<CR>
 
-	" control s to save something
-	nmap <c-s> :w<CR>
-	imap <c-s> <Esc>:w<CR>a
+    " control s to save something
+    nmap <c-s> :w<CR>
+    imap <c-s> <Esc>:w<CR>a
 
     " set paste toggle
     set pastetoggle=<leader>v
@@ -325,8 +322,8 @@ call plug#begin('~/.config/nvim/plugged')
     nnoremap <leader>i :set cursorline!<cr>
 
     " scroll the viewport faster
-    nnoremap <C-e> 3<C-e>
-    nnoremap <C-y> 3<C-y>
+    nnoremap <C-d> 13gj<C-e>
+    nnoremap <C-u> 13gk<C-y>
 
     " moving up and down work as you would expect
     nnoremap <silent> j gj
@@ -380,23 +377,14 @@ call plug#begin('~/.config/nvim/plugged')
     " mappings which are simply short normal mode aliases for commonly used ex commands
     Plug 'tpope/vim-unimpaired'
 
-    " endings for html, xml, etc. - ehances surround
-    Plug 'tpope/vim-ragtag'
-
     " mappings to easily delete, change and add such surroundings in pairs, such as quotes, parens, etc.
     Plug 'tpope/vim-surround'
-
-    " tmux integration for vim
-    Plug 'benmills/vimux'
 
     " enables repeating other supported plugins with the . command
     Plug 'tpope/vim-repeat'
 
     " .editorconfig support
     Plug 'editorconfig/editorconfig-vim'
-
-    " asynchronous build and test dispatcher
-    Plug 'tpope/vim-dispatch'
 
     " netrw helper
     Plug 'tpope/vim-vinegar'
@@ -413,9 +401,6 @@ call plug#begin('~/.config/nvim/plugged')
     " detect indent style (tabs vs. spaces)
     Plug 'tpope/vim-sleuth'
     
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-	let g:deoplete#enable_at_startup = 1
-
     " Startify: Fancy startup screen for vim {{{
         Plug 'mhinz/vim-startify'
 
@@ -460,38 +445,6 @@ call plug#begin('~/.config/nvim/plugged')
 
     " Close buffers but keep splits
     Plug 'moll/vim-bbye'
-
-    " Writing in vim {{{{
-        Plug 'junegunn/goyo.vim'
-
-        let g:goyo_entered = 0
-        function! s:goyo_enter()
-            silent !tmux set status off
-            let g:goyo_entered = 1
-            set noshowmode
-            set noshowcmd
-            set scrolloff=999
-            set wrap
-            setlocal textwidth=0
-            setlocal wrapmargin=0
-        endfunction
-
-        function! s:goyo_leave()
-            silent !tmux set status on
-            let g:goyo_entered = 0
-            set showmode
-            set showcmd
-            set scrolloff=5
-            set textwidth=120
-            set wrapmargin=8
-        endfunction
-
-        autocmd! User GoyoEnter nested call <SID>goyo_enter()
-        autocmd! User GoyoLeave nested call <SID>goyo_leave()
-    " }}}
-
-    " context-aware pasting
-    Plug 'sickill/vim-pasta'
 
     " NERDTree {{{
         Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
@@ -545,20 +498,22 @@ call plug#begin('~/.config/nvim/plugged')
     " FZF {{{
         Plug '/usr/local/opt/fzf'
         Plug 'junegunn/fzf.vim'
-        let g:fzf_layout = { 'down': '~25%' }
+        let g:fzf_layout = { 'down': '~40%' }
 
         if isdirectory(".git")
             " if in a git project, use :GFiles
-            nmap <silent> <leader>t :GitFiles --cached --others --exclude-standard<cr>
+            nmap <silent> <C-p> :GitFiles --cached --others --exclude-standard<cr>
         else
             " otherwise, use :FZF
-            nmap <silent> <leader>t :FZF<cr>
+            nmap <silent> <C-p> :FZF<cr>
         endif
+
 
         nmap <silent> <leader>s :GFiles?<cr>
         nmap <silent> <leader>b :Buffers<cr>
+		nmap <silent> <leader>r :BTags<cr>
         nmap <silent> <leader>rr :Semshi rename<CR>
-        nmap <silent> <C-p> :FZF<cr>
+        " nmap <silent> <C-p> :FZF<cr>
         nmap <leader><tab> <plug>(fzf-maps-n)
         xmap <leader><tab> <plug>(fzf-maps-x)
         omap <leader><tab> <plug>(fzf-maps-o)
@@ -584,13 +539,55 @@ call plug#begin('~/.config/nvim/plugged')
         \  'options': '-m -x +s',
         \  'down':    '40%'})
 
+        " -Tjs - for js files
         command! -bang -nargs=* Find call fzf#vim#grep(
-            \ 'rg --column --line-number --no-heading --follow --color=always '.<q-args>, 1,
+            \ 'rg -tpy --column --line-number --no-heading --follow --color=always '.<q-args>, 1,
             \ <bang>0 ? fzf#vim#with_preview('up:60%') : fzf#vim#with_preview('right:50%:hidden', '?'), <bang>0)
         command! -bang -nargs=? -complete=dir Files
             \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:50%', '?'), <bang>0)
         command! -bang -nargs=? -complete=dir GitFiles
             \ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview('right:50%', '?'), <bang>0)
+
+        " Command for git grep
+        " - fzf#vim#grep(command, with_column, [options], [fullscreen])
+        command! -bang -nargs=* GGrep
+        \ call fzf#vim#grep(
+        \   'git grep --line-number '.shellescape(<q-args>), 0,
+        \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
+
+        " Override Colors command. You can safely do this in your .vimrc as fzf.vim
+        " will not override existing commands.
+        command! -bang Colors
+        \ call fzf#vim#colors({'left': '15%', 'options': '--reverse --margin 30%,0'}, <bang>0)
+
+        " Augmenting Ag command using fzf#vim#with_preview function
+        "   * fzf#vim#with_preview([[options], [preview window], [toggle keys...]])
+        "     * For syntax-highlighting, Ruby and any of the following tools are required:
+        "       - Bat: https://github.com/sharkdp/bat
+        "       - Highlight: http://www.andre-simon.de/doku/highlight/en/highlight.php
+        "       - CodeRay: http://coderay.rubychan.de/
+        "       - Rouge: https://github.com/jneen/rouge
+        "
+        "   :Ag  - Start fzf with hidden preview window that can be enabled with "?" key
+        "   :Ag! - Start fzf in fullscreen and display the preview window above
+        command! -bang -nargs=* Ag
+        \ call fzf#vim#ag(<q-args>,
+        \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+        \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+        \                 <bang>0)
+
+        " Similarly, we can apply it to fzf#vim#grep. To use ripgrep instead of ag:
+        command! -bang -nargs=* Rg
+        \ call fzf#vim#grep(
+        \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+        \   <bang>0 ? fzf#vim#with_preview('up:60%')
+        \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+        \   <bang>0)
+
+        " Likewise, Files command with preview window
+        command! -bang -nargs=? -complete=dir Files
+        \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
     " }}}
 
     " signify {{{
@@ -602,11 +599,6 @@ call plug#begin('~/.config/nvim/plugged')
         let g:signify_sign_delete_first_line = '‾'
         let g:signify_sign_change = '!'
     " }}}
-    
-    " solidity {{{
-        Plug 'dmdque/solidity.vim'
-    " }}}
-
 
     " vim-fugitive {{{
         Plug 'tpope/vim-fugitive'
@@ -618,50 +610,6 @@ call plug#begin('~/.config/nvim/plugged')
         nmap <leader>ge :Gedit<cr>
         nmap <silent><leader>gr :Gread<cr>
         nmap <silent><leader>gb :Gblame<cr>
-    " }}}
-
-    " ALE {{{
-        Plug 'w0rp/ale' " Asynchonous linting engine
-        let g:ale_set_highlights = 0
-        let g:ale_change_sign_column_color = 0
-        let g:ale_sign_column_always = 1
-        let g:ale_sign_error = '✖'
-        let g:ale_sign_warning = '⚠'
-        let g:ale_echo_msg_error_str = '✖'
-        let g:ale_echo_msg_warning_str = '⚠'
-        let g:ale_echo_msg_format = '%severity% %s% [%linter%% code%]'
-        let g:ale_completion_enabled = 0 
-
-        let g:ale_linters = {
-        \   'javascript': ['eslint', 'tsserver'],
-        \   'typescript': ['tsserver', 'tslint'],
-        \   'typescript.tsx': ['tsserver', 'tslint'],
-        \   'html': []
-        \}
-        let g:ale_fixers = {}
-        let g:ale_fixers['javascript'] = ['prettier']
-        let g:ale_fixers['typescript'] = ['prettier', 'tslint']
-        let g:ale_fixers['json'] = ['prettier']
-        let g:ale_fixers['css'] = ['prettier']
-        let g:ale_javascript_prettier_use_local_config = 1
-        let g:ale_fix_on_save = 0
-        nmap <silent><leader>af :ALEFix<cr>
-    " }}}
-
-    " UltiSnips {{{
-        Plug 'SirVer/ultisnips' " Snippets plugin
-        let g:UltiSnipsExpandTrigger="<tab>"
-    " }}}
-
-    " Completion {{{
-        " if (has('nvim'))
-        "     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-        " else
-        "     Plug 'Shougo/deoplete.nvim'
-        "     Plug 'roxma/nvim-yarp'
-        "     Plug 'roxma/vim-hug-neovim-rpc'
-        " endif
-        " let g:deoplete#enable_at_startup = 1
     " }}}
 " }}}
 
@@ -689,37 +637,20 @@ call plug#begin('~/.config/nvim/plugged')
     " }}}
 
     " JavaScript {{{
-        Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
         Plug 'othree/yajs.vim', { 'for': [ 'javascript', 'javascript.jsx', 'html' ] }
-        " Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'html'] }
         Plug 'moll/vim-node', { 'for': 'javascript' }
+        Plug 'pangloss/vim-javascript'
         Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx', 'javascript'] }
         Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' }
     " }}}
-
-    " TypeScript {{{
-        Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-        Plug 'ianks/vim-tsx', { 'for': 'typescript' }
-        Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-
-        " Plug 'mhartington/nvim-typescript', { 'for': 'typescript', 'do': './install.sh' }
-        " let g:nvim_typescript#diagnostics_enable = 0
-        " let g:nvim_typescript#max_completion_detail=100
-    " }}}
-
 
     " Styles {{{
         Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
         Plug 'groenewege/vim-less', { 'for': 'less' }
         Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
         Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
-        Plug 'gko/vim-coloresque'
+        " Plug 'gko/vim-coloresque'
         Plug 'stephenway/postcss.vim', { 'for': 'css' }
-    " }}}
-
-    " markdown {{{
-        Plug 'tpope/vim-markdown', { 'for': 'markdown' }
-        let g:markdown_fenced_languages = [ 'tsx=typescript.tsx' ]
     " }}}
 
     " JSON {{{
@@ -727,68 +658,90 @@ call plug#begin('~/.config/nvim/plugged')
         let g:vim_json_syntax_conceal = 0
     " }}}
 
-    Plug 'fatih/vim-go', { 'for': 'go' }
-    Plug 'timcharper/textile.vim', { 'for': 'textile' }
-    Plug 'lambdatoast/elm.vim', { 'for': 'elm' }
     Plug 'ekalinin/Dockerfile.vim'
 " }}}
   
-    if has('nvim')
-      Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    else
-      Plug 'Shougo/deoplete.nvim'
-      Plug 'roxma/nvim-yarp'
-      Plug 'roxma/vim-hug-neovim-rpc'
-    endif
+    " if has('nvim')
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    " else
+    "   Plug 'Shougo/deoplete.nvim'
+    "   Plug 'roxma/nvim-yarp'
+    "   Plug 'roxma/vim-hug-neovim-rpc'
+    " endif
     let g:deoplete#enable_at_startup = 1
+    let g:deoplete#auto_completion_start_length = 2
+    " let g:deoplete#enable_smart_case = 1
 
-    Plug 'zchee/deoplete-jedi'
-    
-    Plug 'davidhalter/jedi-vim'
+    " Latest changs
+    let g:deoplete#enable_ignore_case = 1
+    let g:deoplete#enable_smart_case = 1
+    let g:deoplete#enable_camel_case = 1
+    let g:deoplete#enable_refresh_always = 1
+    let g:deoplete#max_abbr_width = 0
+    let g:deoplete#max_menu_width = 0
+    let g:deoplete#omni#input_patterns = get(g:,'deoplete#omni#input_patterns',{})
+    let g:tern_request_timeout = 1
+    let g:tern_request_timeout = 6000
+    let g:tern#command = ["tern"]
+    let g:tern#arguments = [" — persistent"]
 
-    let g:jedi#auto_vim_configuration = 0
-	let g:jedi#goto_assignments_command = "<leader>g"
-	let g:jedi#goto_definitions_command = "<leader>d"
-    let g:jedi#use_tabs_not_buffers = 0  " current default is 1.
-    let g:jedi#rename_command = '<Leader>gr'
-    let g:jedi#usages_command = '<Leader>gu'
-    let g:jedi#completions_enabled = 0
-    let g:jedi#smart_auto_mappings = 1
-
-    " Unite/ref and pydoc are more useful.
-    let g:jedi#documentation_command = '<Leader>_K'
-    let g:jedi#auto_close_doc = 1
-
-    Plug 'tomlion/vim-solidity'
+	  " this depends on deoplete
+	  Plug 'ervandew/supertab'
+    let g:SuperTabDefaultCompletionType = "<c-n>"
 
     Plug 'mileszs/ack.vim'
-    nmap <leader>a :Ack ""<Left> 
-    nmap <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
-	
-    Plug 'majutsushi/tagbar'
-    nmap <F9> :TagbarToggle<CR>
+    let g:ackpreview=1
+    if executable('ag')
+        let g:ackprg = 'ag --nogroup --nocolor --column'
+    endif
 
+    nmap <C-S-F> :Rg <CR>
+    noremap <Leader>f :Ag <CR>
+	
     xnoremap < <gv
     xnoremap > >gv
+
+	  set tabstop=2 shiftwidth=2 expandtab
+	
+    " Semantic highlighting in Python
     Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+    
+    " calling Neomake will check if eslint is repsected
+    Plug 'neomake/neomake', { 'on': 'Neomake' }
+    let g:neomake_javascript_enabled_makers = ['eslint']
+
+    " Latest changes might be experimental
+    Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
+    Plug 'carlitux/deoplete-ternjs'
+
+    Plug 'ludovicchabant/vim-gutentags'
+
+    Plug 'Rigellute/rigel'
+    Plug 'itchyny/lightline.vim'
+
 call plug#end()
 
+
+
+
+
+	
 " Colorscheme and final setup {{{
-    " This call must happen after the plug#end() call to ensure
-    " that the colorschemes have been loaded
-    if filereadable(expand("~/.vimrc_background"))
-        let base16colorspace=256
-        source ~/.vimrc_background
-    else
-        let g:onedark_termcolors=16
-        let g:onedark_terminal_italics=1
-        colorscheme onedark
-    endif
-    syntax on
-    filetype plugin indent on
+    " colorscheme
+    set termguicolors
+    syntax enable
+    colorscheme rigel
+
+    " enable flow support
+    let g:javascript_plugin_flow = 1
+
     " make the highlighting of tabs and other non-text less annoying
     highlight SpecialKey ctermfg=19 guifg=#333333
     highlight NonText ctermfg=19 guifg=#333333
+
+    " avtivate lightline
+    let g:rigel_lightline = 1
+    let g:lightline = { 'colorscheme': 'rigel' }
 
     " make comments and HTML attributes italic
     highlight Comment cterm=italic term=italic gui=italic

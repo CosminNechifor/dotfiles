@@ -1,3 +1,6 @@
+# work in progress
+
+
 CONFIG=".config" 
 NVIM="nvim"
 

@@ -1,0 +1,474 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/3fdf28bc/
+$	init.vim	/^    nnoremap <silent> $ g\$$/;"	m
+$"	init.vim	/^    vnoremap $" <esc>`>a"<esc>`<i"<esc>$/;"	m
+$'	init.vim	/^    vnoremap $' <esc>`>a'<esc>`<i'<esc>$/;"	m
+$(	init.vim	/^    vnoremap $( <esc>`>a)<esc>`<i(<esc>$/;"	m
+$<	init.vim	/^    vnoremap $< <esc>`>a><esc>`<i<<esc>$/;"	m
+$FZF_DEFAULT_COMMAND	.vimrc	/^  let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'$/;"	v
+$FZF_DEFAULT_COMMAND	.vimrc	/^  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git\/*"'$/;"	v
+$FZF_DEFAULT_COMMAND	.vimrc	/^let $FZF_DEFAULT_COMMAND =  "find * -path '*\/\\.*' -prune -o -path 'node_modules\/**' -prune -o/;"	v
+$[	init.vim	/^    vnoremap $[ <esc>`>a]<esc>`<i[<esc>$/;"	m
+$\\	init.vim	/^    vnoremap $\\ <esc>`>o*\/<esc>`<O\/*<esc>$/;"	m
+${	init.vim	/^    vnoremap ${ <esc>`>a}<esc>`<i{<esc>$/;"	m
+.	init.vim	/^    vnoremap . :normal .<cr>$/;"	m
+;s	init.vim	/^    nmap ;s :set invspell spelllang=en<cr>$/;"	m
+<	.vimrc	/^vmap < <gv$/;"	m
+<	init.vim	/^    xnoremap < <gv$/;"	m
+<A-1>	init.vim	/^        nmap <silent> <A-1> :call ToggleNerdTree()<cr>$/;"	m
+<C-P>	.vimrc	/^cnoremap <C-P> <C-R>=expand("%:p:h") . "\/" <CR>$/;"	m
+<C-S-F>	init.vim	/^    nmap <C-S-F> :Rg <CR>$/;"	m
+<C-c>	.vimrc	/^  vmap <C-c> :w !pbcopy<CR><CR>$/;"	m
+<C-c>	.vimrc	/^vmap <C-c> y: call system("xclip -i -selection clipboard", getreg("\\""))<CR>$/;"	m
+<C-c>	init.vim	/^    vmap <C-c> y: call system("xclip -i -selection clipboard", getreg("\\""))<CR>$/;"	m
+<C-d>	init.vim	/^    nnoremap <C-d> 13gj<C-e>$/;"	m
+<C-h>	.vimrc	/^noremap <C-h> <C-w>h$/;"	m
+<C-h>	init.vim	/^    map <silent> <C-h> :call functions#WinMove('h')<cr>$/;"	m
+<C-j>	.vimrc	/^noremap <C-j> <C-w>j$/;"	m
+<C-j>	init.vim	/^    inoremap <expr> <C-j> pumvisible() ? "\\<C-N>" : "\\<C-j>"$/;"	m
+<C-j>	init.vim	/^    map <silent> <C-j> :call functions#WinMove('j')<cr>$/;"	m
+<C-k>	.vimrc	/^noremap <C-k> <C-w>k$/;"	m
+<C-k>	init.vim	/^    inoremap <expr> <C-k> pumvisible() ? "\\<C-P>" : "\\<C-k>"$/;"	m
+<C-k>	init.vim	/^    map <silent> <C-k> :call functions#WinMove('k')<cr>$/;"	m
+<C-l>	.vimrc	/^noremap <C-l> <C-w>l$/;"	m
+<C-l>	init.vim	/^    map <silent> <C-l> :call functions#WinMove('l')<cr>$/;"	m
+<C-p>	init.vim	/^            nmap <silent> <C-p> :FZF<cr>$/;"	m
+<C-p>	init.vim	/^            nmap <silent> <C-p> :GitFiles --cached --others --exclude-standard<cr>$/;"	m
+<C-u>	init.vim	/^    nnoremap <C-u> 13gk<C-y>$/;"	m
+<C-w>	init.vim	/^    map <C-w> :wincmd q<cr>$/;"	m
+<C-x>	.vimrc	/^  vmap <C-x> :!pbcopy<CR>$/;"	m
+<F2>	.vimrc	/^nnoremap <silent> <F2> :NERDTreeFind<CR>$/;"	m
+<F3>	.vimrc	/^nnoremap <silent> <F3> :NERDTreeToggle<CR>$/;"	m
+<F4>	.vimrc	/^nmap <silent> <F4> :TagbarToggle<CR>$/;"	m
+<Leader>C	init.vim	/^        nnoremap <silent> <Leader>C :call fzf#run({$/;"	m
+<Leader>e	.vimrc	/^noremap <Leader>e :e <C-R>=expand("%:p:h") . "\/" <CR>$/;"	m
+<Leader>f	init.vim	/^    noremap <Leader>f :Ag <CR>$/;"	m
+<Leader>ga	.vimrc	/^noremap <Leader>ga :Gwrite<CR>$/;"	m
+<Leader>gb	.vimrc	/^noremap <Leader>gb :Gblame<CR>$/;"	m
+<Leader>gc	.vimrc	/^noremap <Leader>gc :Gcommit<CR>$/;"	m
+<Leader>gd	.vimrc	/^noremap <Leader>gd :Gvdiff<CR>$/;"	m
+<Leader>gll	.vimrc	/^noremap <Leader>gll :Gpull<CR>$/;"	m
+<Leader>gr	.vimrc	/^noremap <Leader>gr :Gremove<CR>$/;"	m
+<Leader>gs	.vimrc	/^noremap <Leader>gs :Gstatus<CR>$/;"	m
+<Leader>gsh	.vimrc	/^noremap <Leader>gsh :Gpush<CR>$/;"	m
+<Leader>h	.vimrc	/^noremap <Leader>h :<C-u>split<CR>$/;"	m
+<Leader>o	.vimrc	/^nnoremap <Leader>o :.Gbrowse<CR>$/;"	m
+<Leader>te	.vimrc	/^noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "\/" <CR>$/;"	m
+<Leader>v	.vimrc	/^noremap <Leader>v :<C-u>vsplit<CR>$/;"	m
+<S-Tab>	.vimrc	/^nnoremap <S-Tab> gT$/;"	m
+<S-t>	.vimrc	/^nnoremap <silent> <S-t> :tabnew<CR>$/;"	m
+<Tab>	.vimrc	/^nnoremap <Tab> gt$/;"	m
+<c-s>	init.vim	/^    imap <c-s> <Esc>:w<CR>a$/;"	m
+<c-s>	init.vim	/^    nmap <c-s> :w<CR>$/;"	m
+<c-x><c-f>	init.vim	/^        imap <c-x><c-f> <plug>(fzf-complete-path)$/;"	m
+<c-x><c-j>	init.vim	/^        imap <c-x><c-j> <plug>(fzf-complete-file-ag)$/;"	m
+<c-x><c-k>	init.vim	/^        imap <c-x><c-k> <plug>(fzf-complete-word)$/;"	m
+<c-x><c-l>	init.vim	/^        imap <c-x><c-l> <plug>(fzf-complete-line)$/;"	m
+<cr>	plug.vim	/^      nmap <buffer> <cr> <plug>(plug-preview)$/;"	m
+<leader>.	.vimrc	/^nnoremap <leader>. :lcd %:p:h<CR>$/;"	m
+<leader>.	init.vim	/^    nmap <leader>. <c-^>$/;"	m
+<leader><space>	.vimrc	/^nnoremap <silent> <leader><space> :noh<cr>$/;"	m
+<leader><space>	init.vim	/^    nmap <leader><space> :%s\/\\s\\+$<cr>$/;"	m
+<leader><space><space>	init.vim	/^    nmap <leader><space><space> :%s\/\\n\\{2,}\/\\r\\r\/g<cr>$/;"	m
+<leader><tab>	init.vim	/^        nmap <leader><tab> <plug>(fzf-maps-n)$/;"	m
+<leader><tab>	init.vim	/^        omap <leader><tab> <plug>(fzf-maps-o)$/;"	m
+<leader><tab>	init.vim	/^        xmap <leader><tab> <plug>(fzf-maps-x)$/;"	m
+<leader>[	init.vim	/^    nmap <leader>[ <<$/;"	m
+<leader>[	init.vim	/^    vmap <leader>[ <gv$/;"	m
+<leader>]	init.vim	/^    nmap <leader>] >>$/;"	m
+<leader>]	init.vim	/^    vmap <leader>] >gv$/;"	m
+<leader>b	.vimrc	/^nnoremap <silent> <leader>b :Buffers<CR>$/;"	m
+<leader>b	init.vim	/^        nmap <silent> <leader>b :Buffers<cr>$/;"	m
+<leader>c	.vimrc	/^noremap <leader>c :bd<CR>$/;"	m
+<leader>e	.vimrc	/^nnoremap <silent> <leader>e :FZF -m<CR>$/;"	m
+<leader>eg	init.vim	/^    map <leader>eg :e! ~\/.gitconfig<cr>$/;"	m
+<leader>ev	init.vim	/^    map <leader>ev :e! ~\/.config\/nvim\/init.vim<cr>$/;"	m
+<leader>f	.vimrc	/^nnoremap <silent> <leader>f :Rgrep<CR>$/;"	m
+<leader>gb	init.vim	/^        nmap <silent><leader>gb :Gblame<cr>$/;"	m
+<leader>ge	init.vim	/^        nmap <leader>ge :Gedit<cr>$/;"	m
+<leader>gr	init.vim	/^        nmap <silent><leader>gr :Gread<cr>$/;"	m
+<leader>gs	init.vim	/^        nmap <silent> <leader>gs :Gstatus<cr>$/;"	m
+<leader>i	init.vim	/^    nnoremap <leader>i :set cursorline!<cr>$/;"	m
+<leader>l	init.vim	/^    nmap <leader>l :set list!<cr>$/;"	m
+<leader>md	init.vim	/^    nmap <leader>md :%!markdown --html4tags <cr>$/;"	m
+<leader>p	.vimrc	/^noremap <leader>p "+gP<CR>$/;"	m
+<leader>q	.vimrc	/^noremap <leader>q :bp<CR>$/;"	m
+<leader>r	init.vim	/^		nmap <silent> <leader>r :BTags<cr>$/;"	m
+<leader>rr	init.vim	/^        nmap <silent> <leader>rr :Semshi rename<CR>$/;"	m
+<leader>s	init.vim	/^        nmap <silent> <leader>s :GFiles?<cr>$/;"	m
+<leader>sc	.vimrc	/^nnoremap <leader>sc :CloseSession<CR>$/;"	m
+<leader>sd	.vimrc	/^nnoremap <leader>sd :DeleteSession<CR>$/;"	m
+<leader>sh	.vimrc	/^  nnoremap <silent> <leader>sh :VimShellCreate<CR>$/;"	m
+<leader>sh	.vimrc	/^  nnoremap <silent> <leader>sh :terminal<CR>$/;"	m
+<leader>so	.vimrc	/^nnoremap <leader>so :OpenSession<Space>$/;"	m
+<leader>ss	.vimrc	/^nnoremap <leader>ss :SaveSession<Space>$/;"	m
+<leader>u	init.vim	/^    nnoremap <silent> <leader>u :call functions#HtmlUnEscape()<cr>$/;"	m
+<leader>w	.vimrc	/^noremap <leader>w :bn<CR>$/;"	m
+<leader>x	.vimrc	/^noremap <leader>x :bn<CR>$/;"	m
+<leader>y	init.vim	/^        nmap <silent> <leader>y :NERDTreeFind<cr>$/;"	m
+<leader>z	.vimrc	/^noremap <leader>z :bp<CR>$/;"	m
+<plug>(plug-preview)	plug.vim	/^    nnoremap <silent> <buffer> <plug>(plug-preview) :silent! call <SID>preview_commit()<cr>$/;"	m
+<space>	.vimrc	/^map <space> \/$/;"	m
+<space>	init.vim	/^    noremap <space> :set hlsearch! hlsearch?<cr>$/;"	m
+>	.vimrc	/^vmap > >gv$/;"	m
+>	init.vim	/^    xnoremap > >gv$/;"	m
+Ag	init.vim	/^        command! -bang -nargs=* Ag$/;"	c
+Colors	init.vim	/^        command! -bang Colors$/;"	c
+D	plug.vim	/^  nnoremap <silent> <buffer> D  :PlugDiff<cr>$/;"	m
+FZFMru	init.vim	/^        command! FZFMru call fzf#run({$/;"	c
+Files	init.vim	/^        command! -bang -nargs=? -complete=dir Files$/;"	c
+Find	.vimrc	/^  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed/;"	c
+Find	init.vim	/^        command! -bang -nargs=* Find call fzf#vim#grep($/;"	c
+GGrep	init.vim	/^        command! -bang -nargs=* GGrep$/;"	c
+GitFiles	init.vim	/^        command! -bang -nargs=? -complete=dir GitFiles$/;"	c
+Grep_Default_Options	.vimrc	/^let Grep_Default_Options = '-IR'$/;"	v
+Grep_Skip_Dirs	.vimrc	/^let Grep_Skip_Dirs = '.git node_modules'$/;"	v
+Grep_Skip_Files	.vimrc	/^let Grep_Skip_Files = '*.log *.db'$/;"	v
+J	.vimrc	/^vnoremap J :m '>+1<CR>gv=gv$/;"	m
+K	.vimrc	/^vnoremap K :m '<-2<CR>gv=gv$/;"	m
+L	plug.vim	/^    nnoremap <silent> <buffer> L :call <SID>status_load(line('.'))<cr>$/;"	m
+L	plug.vim	/^    xnoremap <silent> <buffer> L :call <SID>status_load(line('.'))<cr>$/;"	m
+LightlineFileEncoding	init.vim	/^        function! LightlineFileEncoding()$/;"	f
+LightlineFileFormat	init.vim	/^        function! LightlineFileFormat()$/;"	f
+LightlineFileName	init.vim	/^        function! LightlineFileName() abort$/;"	f
+LightlineFileType	init.vim	/^        function! LightlineFileType()$/;"	f
+LightlineGitBranch	init.vim	/^        function! LightlineGitBranch()$/;"	f
+LightlineLinter	init.vim	/^        function! LightlineLinter() abort$/;"	f
+LightlineLinterErrors	init.vim	/^        function! LightlineLinterErrors() abort$/;"	f
+LightlineLinterOk	init.vim	/^        function! LightlineLinterOk() abort$/;"	f
+LightlineLinterWarnings	init.vim	/^        function! LightlineLinterWarnings() abort$/;"	f
+LightlineUpdate	init.vim	/^        function! LightlineUpdate()$/;"	f
+MakeTags	init.vim	/^    command! MakeTags ! ctags -R --exclude=.git --exclude=node_modules --exclude=package.json --/;"	c
+N	.vimrc	/^nnoremap N Nzzzv$/;"	m
+NERDTreeDirArrowCollapsible	init.vim	/^        let NERDTreeDirArrowCollapsible = "\\u00a0" " make arrows invisible$/;"	v
+NERDTreeDirArrowExpandable	init.vim	/^        let NERDTreeDirArrowExpandable = "\\u00a0" " make arrows invisible$/;"	v
+NERDTreeNodeDelimiter	init.vim	/^        let NERDTreeNodeDelimiter = "\\u263a" " smiley face$/;"	v
+NERDTreeShowHidden	init.vim	/^        let NERDTreeShowHidden=1$/;"	v
+Plug	plug.vim	/^  command! -nargs=+ -bar Plug call plug#(<args>)$/;"	c
+PlugClean	plug.vim	/^  command! -nargs=0 -bar -bang PlugClean call s:clean(<bang>0)$/;"	c
+PlugDiff	plug.vim	/^  command! -nargs=0 -bar PlugDiff    call s:diff()$/;"	c
+PlugInstall	plug.vim	/^  command! -nargs=* -bar -bang -complete=customlist,s:names PlugInstall call s:install(<bang>0, /;"	c
+PlugLOD	plug.vim	/^    augroup PlugLOD$/;"	a
+PlugSnapshot	plug.vim	/^  command! -nargs=? -bar -bang -complete=file PlugSnapshot call s:snapshot(<bang>0, <f-args>)$/;"	c
+PlugStatus	plug.vim	/^  command! -nargs=0 -bar PlugStatus  call s:status()$/;"	c
+PlugUpdate	plug.vim	/^  command! -nargs=* -bar -bang -complete=customlist,s:names PlugUpdate  call s:update(<bang>0, [/;"	c
+PlugUpgrade	plug.vim	/^  command! -nargs=0 -bar PlugUpgrade if s:upgrade() | execute 'source' s:esc(s:me) | endif$/;"	c
+R	plug.vim	/^  nnoremap <silent> <buffer> R  :call <SID>retry()<cr>$/;"	m
+RM	init.vim	/^    command! RM call functions#Delete() <Bar> q!$/;"	c
+Rg	init.vim	/^        command! -bang -nargs=* Rg$/;"	c
+Rm	init.vim	/^    command! Rm call functions#Delete()$/;"	c
+S	plug.vim	/^  nnoremap <silent> <buffer> S  :PlugStatus<cr>$/;"	m
+Session	.tmux.conf	/^set -g status-left "Session: #S"$/;"	k
+ToggleNerdTree	init.vim	/^        function! ToggleNerdTree()$/;"	f
+U	plug.vim	/^  nnoremap <silent> <buffer> U  :call <SID>status_update()<cr>$/;"	m
+U	plug.vim	/^  xnoremap <silent> <buffer> U  :call <SID>status_update()<cr>$/;"	m
+X	plug.vim	/^    nnoremap <silent> <buffer> X :call <SID>revert()<cr>$/;"	m
+XX	.vimrc	/^noremap XX "+x<CR>$/;"	m
+YY	.vimrc	/^noremap YY "+y<CR>$/;"	m
+[[	plug.vim	/^  nnoremap <silent> <buffer> [[ :silent! call <SID>section('b')<cr>$/;"	m
+\\s	init.vim	/^    nmap \\s :set ts=4 sts=4 sw=4 et<cr>$/;"	m
+\\t	init.vim	/^    nmap \\t :set ts=4 sts=4 sw=4 noet<cr>$/;"	m
+]]	plug.vim	/^  nnoremap <silent> <buffer> ]] :silent! call <SID>section('')<cr>$/;"	m
+^	init.vim	/^    nnoremap <silent> ^ g^$/;"	m
+alestatus	init.vim	/^        augroup alestatus$/;"	a
+configgroup	init.vim	/^    augroup configgroup$/;"	a
+create_config_dir	install.sh	/^create_config_dir() {$/;"	f
+create_nvim_dir	install.sh	/^create_nvim_dir() {$/;"	f
+d	plug.vim	/^      nnoremap <silent> <buffer> d :set opfunc=<sid>delete_op<cr>g@$/;"	m
+d	plug.vim	/^      xnoremap <silent> <buffer> d :<c-u>call <sid>delete_op(visualmode(), 1)<cr>$/;"	m
+dd	plug.vim	/^      nmap     <silent> <buffer> dd d_$/;"	m
+dotfiles	README.md	/^# dotfiles$/;"	c
+filetypedetect	plug.vim	/^        augroup filetypedetect$/;"	a
+g:CSApprox_loaded	.vimrc	/^  let g:CSApprox_loaded = 1$/;"	v
+g:DevIconsEnableFolderExtensionPatternMatching	init.vim	/^        let g:DevIconsEnableFolderExtensionPatternMatching = 1$/;"	v
+g:DevIconsEnableFoldersOpenClose	init.vim	/^        let g:DevIconsEnableFoldersOpenClose = 1$/;"	v
+g:NERDTreeChDirMode	.vimrc	/^let g:NERDTreeChDirMode=2$/;"	v
+g:NERDTreeIgnore	.vimrc	/^let g:NERDTreeIgnore=['\\.rbc$', '\\~$', '\\.pyc$', '\\.db$', '\\.sqlite$', '__pycache__']$/;"	v
+g:NERDTreeIndicatorMapCustom	init.vim	/^        let g:NERDTreeIndicatorMapCustom = {$/;"	v
+g:NERDTreeMapOpenInTabSilent	.vimrc	/^let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'$/;"	v
+g:NERDTreeShowBookmarks	.vimrc	/^let g:NERDTreeShowBookmarks=1$/;"	v
+g:NERDTreeSortOrder	.vimrc	/^let g:NERDTreeSortOrder=['^__\\.py$', '\\\/$', '*', '\\.swp$', '\\.bak$', '\\~$']$/;"	v
+g:NERDTreeWinSize	.vimrc	/^let g:NERDTreeWinSize = 50$/;"	v
+g:SuperTabDefaultCompletionType	init.vim	/^    let g:SuperTabDefaultCompletionType = "<c-n>"$/;"	v
+g:UltiSnipsEditSplit	.vimrc	/^let g:UltiSnipsEditSplit="vertical"$/;"	v
+g:UltiSnipsExpandTrigger	.vimrc	/^let g:UltiSnipsExpandTrigger="<tab>"$/;"	v
+g:UltiSnipsJumpBackwardTrigger	.vimrc	/^let g:UltiSnipsJumpBackwardTrigger="<c-b>"$/;"	v
+g:UltiSnipsJumpForwardTrigger	.vimrc	/^let g:UltiSnipsJumpForwardTrigger="<tab>"$/;"	v
+g:WebDevIconsOS	init.vim	/^        let g:WebDevIconsOS = 'Darwin'$/;"	v
+g:WebDevIconsUnicodeDecorateFolderNodes	init.vim	/^        let g:WebDevIconsUnicodeDecorateFolderNodes = 1$/;"	v
+g:_plug_bang	plug.vim	/^    let g:_plug_bang = (s:is_win && has('gui_running') ? 'silent ' : '').'!'.escape(cmd, '#!%')$/;"	v
+g:ackpreview	init.vim	/^    let g:ackpreview=1$/;"	v
+g:ackprg	init.vim	/^        let g:ackprg = 'ag --nogroup --nocolor --column'$/;"	v
+g:airline#extensions#branch#enabled	.vimrc	/^let g:airline#extensions#branch#enabled = 1$/;"	v
+g:airline#extensions#branch#prefix	.vimrc	/^  let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇$/;"	v
+g:airline#extensions#linecolumn#prefix	.vimrc	/^  let g:airline#extensions#linecolumn#prefix = '¶'$/;"	v
+g:airline#extensions#paste#symbol	.vimrc	/^  let g:airline#extensions#paste#symbol      = 'ρ'$/;"	v
+g:airline#extensions#readonly#symbol	.vimrc	/^  let g:airline#extensions#readonly#symbol   = '⊘'$/;"	v
+g:airline#extensions#syntastic#enabled	.vimrc	/^let g:airline#extensions#syntastic#enabled = 1$/;"	v
+g:airline#extensions#tabline#enabled	.vimrc	/^let g:airline#extensions#tabline#enabled = 1$/;"	v
+g:airline#extensions#tabline#left_alt_sep	.vimrc	/^  let g:airline#extensions#tabline#left_alt_sep = '|'$/;"	v
+g:airline#extensions#tabline#left_alt_sep	.vimrc	/^  let g:airline#extensions#tabline#left_alt_sep = ''$/;"	v
+g:airline#extensions#tabline#left_sep	.vimrc	/^  let g:airline#extensions#tabline#left_sep = ' '$/;"	v
+g:airline#extensions#tabline#left_sep	.vimrc	/^  let g:airline#extensions#tabline#left_sep = ''$/;"	v
+g:airline#extensions#tagbar#enabled	.vimrc	/^let g:airline#extensions#tagbar#enabled = 1$/;"	v
+g:airline#extensions#virtualenv#enabled	.vimrc	/^let g:airline#extensions#virtualenv#enabled = 1$/;"	v
+g:airline_left_alt_sep	.vimrc	/^  let g:airline_left_alt_sep      = '»'$/;"	v
+g:airline_left_alt_sep	.vimrc	/^  let g:airline_left_alt_sep = ''$/;"	v
+g:airline_left_sep	.vimrc	/^  let g:airline_left_sep          = '▶'$/;"	v
+g:airline_left_sep	.vimrc	/^  let g:airline_left_sep = ''$/;"	v
+g:airline_right_alt_sep	.vimrc	/^  let g:airline_right_alt_sep     = '«'$/;"	v
+g:airline_right_alt_sep	.vimrc	/^  let g:airline_right_alt_sep = ''$/;"	v
+g:airline_right_sep	.vimrc	/^  let g:airline_right_sep         = '◀'$/;"	v
+g:airline_right_sep	.vimrc	/^  let g:airline_right_sep = ''$/;"	v
+g:airline_skip_empty_sections	.vimrc	/^let g:airline_skip_empty_sections = 1$/;"	v
+g:airline_symbols	.vimrc	/^  let g:airline_symbols = {}$/;"	v
+g:airline_symbols	.vimrc	/^  let g:airline_symbols.branch    = '⎇'$/;"	v
+g:airline_symbols	.vimrc	/^  let g:airline_symbols.branch = ''$/;"	v
+g:airline_symbols	.vimrc	/^  let g:airline_symbols.linenr    = '␊'$/;"	v
+g:airline_symbols	.vimrc	/^  let g:airline_symbols.linenr = ''$/;"	v
+g:airline_symbols	.vimrc	/^  let g:airline_symbols.paste     = 'Þ'$/;"	v
+g:airline_symbols	.vimrc	/^  let g:airline_symbols.paste     = 'ρ'$/;"	v
+g:airline_symbols	.vimrc	/^  let g:airline_symbols.paste     = '∥'$/;"	v
+g:airline_symbols	.vimrc	/^  let g:airline_symbols.readonly = ''$/;"	v
+g:airline_symbols	.vimrc	/^  let g:airline_symbols.whitespace = 'Ξ'$/;"	v
+g:airline_theme	.vimrc	/^let g:airline_theme = 'powerlineish'$/;"	v
+g:deoplete#auto_completion_start_length	init.vim	/^    let g:deoplete#auto_completion_start_length = 2$/;"	v
+g:deoplete#enable_at_startup	init.vim	/^    let g:deoplete#enable_at_startup = 1$/;"	v
+g:deoplete#enable_camel_case	init.vim	/^    let g:deoplete#enable_camel_case = 1$/;"	v
+g:deoplete#enable_ignore_case	init.vim	/^    let g:deoplete#enable_ignore_case = 1$/;"	v
+g:deoplete#enable_refresh_always	init.vim	/^    let g:deoplete#enable_refresh_always = 1$/;"	v
+g:deoplete#enable_smart_case	init.vim	/^    let g:deoplete#enable_smart_case = 1$/;"	v
+g:deoplete#max_abbr_width	init.vim	/^    let g:deoplete#max_abbr_width = 0$/;"	v
+g:deoplete#max_menu_width	init.vim	/^    let g:deoplete#max_menu_width = 0$/;"	v
+g:deoplete#omni#input_patterns	init.vim	/^    let g:deoplete#omni#input_patterns = get(g:,'deoplete#omni#input_patterns',{})$/;"	v
+g:fzf_layout	init.vim	/^        let g:fzf_layout = { 'down': '~40%' }$/;"	v
+g:indentLine_char	.vimrc	/^  let g:indentLine_char = '┆'$/;"	v
+g:indentLine_concealcursor	.vimrc	/^  let g:indentLine_concealcursor = 0$/;"	v
+g:indentLine_enabled	.vimrc	/^  let g:indentLine_enabled = 1$/;"	v
+g:indentLine_faster	.vimrc	/^  let g:indentLine_faster = 1$/;"	v
+g:javascript_enable_domhtmlcss	.vimrc	/^let g:javascript_enable_domhtmlcss = 1$/;"	v
+g:javascript_plugin_flow	init.vim	/^    let g:javascript_plugin_flow = 1$/;"	v
+g:jedi#auto_initialization	.vimrc	/^let g:jedi#auto_initialization = 1$/;"	v
+g:jedi#completions_command	.vimrc	/^let g:jedi#completions_command = "<C-Space>"$/;"	v
+g:jedi#documentation_command	.vimrc	/^let g:jedi#documentation_command = "K"$/;"	v
+g:jedi#goto_assignments_command	.vimrc	/^let g:jedi#goto_assignments_command = "<leader>g"$/;"	v
+g:jedi#goto_definitions_command	.vimrc	/^let g:jedi#goto_definitions_command = "<leader>d"$/;"	v
+g:jedi#popup_on_dot	.vimrc	/^let g:jedi#popup_on_dot = 1$/;"	v
+g:jedi#rename_command	.vimrc	/^let g:jedi#rename_command = "<leader>r"$/;"	v
+g:jedi#smart_auto_mappings	.vimrc	/^let g:jedi#smart_auto_mappings = 0$/;"	v
+g:jedi#usages_command	.vimrc	/^let g:jedi#usages_command = "<leader>n"$/;"	v
+g:jedi#use_tabs_not_buffers	.vimrc	/^let g:jedi#use_tabs_not_buffers = 1$/;"	v
+g:lightline	init.vim	/^        let g:lightline = {$/;"	v
+g:lightline	init.vim	/^    let g:lightline = { 'colorscheme': 'rigel' }$/;"	v
+g:loaded_plug	plug.vim	/^let g:loaded_plug = 1$/;"	v
+g:make	.vimrc	/^        let g:make = 'make'$/;"	v
+g:make	.vimrc	/^let g:make = 'gmake'$/;"	v
+g:neomake_javascript_enabled_makers	init.vim	/^    let g:neomake_javascript_enabled_makers = ['eslint']$/;"	v
+g:nerdtree_tabs_focus_on_files	.vimrc	/^let g:nerdtree_tabs_focus_on_files=1$/;"	v
+g:not_finish_vimplug	.vimrc	/^  let g:not_finish_vimplug = "yes"$/;"	v
+g:plug_home	plug.vim	/^  let g:plug_home = home$/;"	v
+g:plugs	plug.vim	/^    let g:plugs[name] = spec$/;"	v
+g:plugs	plug.vim	/^  let g:plugs = {}$/;"	v
+g:plugs_order	plug.vim	/^  let g:plugs_order = []$/;"	v
+g:plugs_order	plug.vim	/^  let g:plugs_order = get(g:, 'plugs_order', keys(g:plugs))$/;"	v
+g:polyglot_disabled	.vimrc	/^let g:polyglot_disabled = ['python']$/;"	v
+g:rigel_lightline	init.vim	/^    let g:rigel_lightline = 1$/;"	v
+g:session_autoload	.vimrc	/^let g:session_autoload = "no"$/;"	v
+g:session_autosave	.vimrc	/^let g:session_autosave = "no"$/;"	v
+g:session_command_aliases	.vimrc	/^let g:session_command_aliases = 1$/;"	v
+g:session_directory	.vimrc	/^let g:session_directory = "~\/.vim\/session"$/;"	v
+g:signify_sign_add	init.vim	/^        let g:signify_sign_add               = '+'$/;"	v
+g:signify_sign_change	init.vim	/^        let g:signify_sign_change = '!'$/;"	v
+g:signify_sign_delete	init.vim	/^        let g:signify_sign_delete            = '_'$/;"	v
+g:signify_sign_delete_first_line	init.vim	/^        let g:signify_sign_delete_first_line = '‾'$/;"	v
+g:signify_vcs_list	init.vim	/^        let g:signify_vcs_list = [ 'git' ]$/;"	v
+g:startify_bookmarks	init.vim	/^        let g:startify_bookmarks = [$/;"	v
+g:startify_change_to_dir	init.vim	/^        let g:startify_change_to_dir = 0$/;"	v
+g:startify_commands	init.vim	/^        let g:startify_commands = [$/;"	v
+g:startify_custom_header	init.vim	/^        let g:startify_custom_header = [ ]$/;"	v
+g:startify_files_number	init.vim	/^        let g:startify_files_number = 5$/;"	v
+g:startify_lists	init.vim	/^        let g:startify_lists = [$/;"	v
+g:startify_relative_path	init.vim	/^        let g:startify_relative_path = 1$/;"	v
+g:startify_use_env	init.vim	/^        let g:startify_use_env = 1$/;"	v
+g:syntastic_aggregate_errors	.vimrc	/^let g:syntastic_aggregate_errors = 1$/;"	v
+g:syntastic_always_populate_loc_list	.vimrc	/^let g:syntastic_always_populate_loc_list=1$/;"	v
+g:syntastic_auto_loc_list	.vimrc	/^let g:syntastic_auto_loc_list=1$/;"	v
+g:syntastic_error_symbol	.vimrc	/^let g:syntastic_error_symbol='✗'$/;"	v
+g:syntastic_python_checkers	.vimrc	/^let g:syntastic_python_checkers=['python']$/;"	v
+g:syntastic_style_error_symbol	.vimrc	/^let g:syntastic_style_error_symbol = '✗'$/;"	v
+g:syntastic_style_warning_symbol	.vimrc	/^let g:syntastic_style_warning_symbol = '⚠'$/;"	v
+g:syntastic_warning_symbol	.vimrc	/^let g:syntastic_warning_symbol='⚠'$/;"	v
+g:tagbar_autofocus	.vimrc	/^let g:tagbar_autofocus = 1$/;"	v
+g:tern#arguments	init.vim	/^    let g:tern#arguments = [" — persistent"]$/;"	v
+g:tern#command	init.vim	/^    let g:tern#command = ["tern"]$/;"	v
+g:tern_request_timeout	init.vim	/^    let g:tern_request_timeout = 1$/;"	v
+g:tern_request_timeout	init.vim	/^    let g:tern_request_timeout = 6000$/;"	v
+g:user_emmet_settings	init.vim	/^        let g:user_emmet_settings = {$/;"	v
+g:vim_bootstrap_editor	.vimrc	/^let g:vim_bootstrap_editor = "vim"				" nvim or vim$/;"	v
+g:vim_bootstrap_langs	.vimrc	/^let g:vim_bootstrap_langs = "c,html,javascript,python,rust"$/;"	v
+g:vim_json_syntax_conceal	init.vim	/^        let g:vim_json_syntax_conceal = 0$/;"	v
+g:vimshell_prompt	.vimrc	/^let g:vimshell_prompt =  '$ '$/;"	v
+g:vimshell_user_prompt	.vimrc	/^let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'$/;"	v
+is_vim	.tmux.conf	/^is_vim='echo "#{pane_current_command}" | grep -iqE "(^|\\\/)g?(view|n?vim?)(diff)?$"'$/;"	k
+j	init.vim	/^    nnoremap <silent> j gj$/;"	m
+jk	init.vim	/^    inoremap jk <esc>$/;"	m
+k	init.vim	/^    nnoremap <silent> k gk$/;"	m
+mapleader	.vimrc	/^let mapleader=','$/;"	v
+mapleader	init.vim	/^    let mapleader = ','$/;"	v
+n	.vimrc	/^nnoremap n nzzzv$/;"	m
+nerdtree	init.vim	/^        augroup nerdtree$/;"	a
+no_buffers_menu	.vimrc	/^let no_buffers_menu=1$/;"	v
+o	plug.vim	/^      nmap <buffer> o <plug>(plug-preview)$/;"	m
+plug#	plug.vim	/^function! plug#(repo, ...)$/;"	f
+plug#begin	plug.vim	/^function! plug#begin(...)$/;"	f
+plug#end	plug.vim	/^function! plug#end()$/;"	f
+plug#helptags	plug.vim	/^function! plug#helptags()$/;"	f
+plug#load	plug.vim	/^function! plug#load(...)$/;"	f
+python_highlight_all	.vimrc	/^let python_highlight_all = 1$/;"	v
+q	plug.vim	/^  nnoremap <silent> <buffer> q  :if b:plug_preview==1<bar>pc<bar>endif<bar>bd<cr>$/;"	m
+q	plug.vim	/^  nnoremap <silent> <buffer> q :q<cr>$/;"	m
+s:TYPE	plug.vim	/^let s:TYPE = {$/;"	v
+s:append_ul	plug.vim	/^function! s:append_ul(lnum, text)$/;"	f
+s:ask	plug.vim	/^function! s:ask(message, ...)$/;"	f
+s:ask_no_interrupt	plug.vim	/^function! s:ask_no_interrupt(...)$/;"	f
+s:assign_name	plug.vim	/^function! s:assign_name()$/;"	f
+s:assoc	plug.vim	/^function! s:assoc(dict, key, val)$/;"	f
+s:bang	plug.vim	/^function! s:bang(cmd, ...)$/;"	f
+s:bar	plug.vim	/^function! s:bar()$/;"	f
+s:base_spec	plug.vim	/^let s:base_spec = { 'branch': 'master', 'frozen': 0 }$/;"	v
+s:check_ruby	plug.vim	/^function! s:check_ruby()$/;"	f
+s:checkout	plug.vim	/^function! s:checkout(spec)$/;"	f
+s:chsh	plug.vim	/^function! s:chsh(swap)$/;"	f
+s:clean	plug.vim	/^function! s:clean(force)$/;"	f
+s:compare_git_uri	plug.vim	/^function! s:compare_git_uri(a, b)$/;"	f
+s:cpo_save	plug.vim	/^let s:cpo_save = &cpo$/;"	v
+s:define_commands	plug.vim	/^function! s:define_commands()$/;"	f
+s:delete	plug.vim	/^function! s:delete(range, force)$/;"	f
+s:delete_op	plug.vim	/^function! s:delete_op(type, ...)$/;"	f
+s:diff	plug.vim	/^function! s:diff()$/;"	f
+s:dirpath	plug.vim	/^  function! s:dirpath(path)$/;"	f
+s:do	plug.vim	/^function! s:do(pull, force, todo)$/;"	f
+s:doautocmd	plug.vim	/^function! s:doautocmd(...)$/;"	f
+s:dobufread	plug.vim	/^function! s:dobufread(names)$/;"	f
+s:err	plug.vim	/^function! s:err(msg)$/;"	f
+s:esc	plug.vim	/^function! s:esc(path)$/;"	f
+s:escrtp	plug.vim	/^function! s:escrtp(path)$/;"	f
+s:extract_name	plug.vim	/^function! s:extract_name(str, prefix, suffix)$/;"	f
+s:find_name	plug.vim	/^function! s:find_name(lnum)$/;"	f
+s:finish	plug.vim	/^function! s:finish(pull)$/;"	f
+s:finish_bindings	plug.vim	/^function! s:finish_bindings()$/;"	f
+s:first_rtp	plug.vim	/^let s:first_rtp = s:escrtp(get(s:split_rtp(), 0, ''))$/;"	v
+s:format_git_log	plug.vim	/^function! s:format_git_log(line)$/;"	f
+s:format_message	plug.vim	/^function! s:format_message(bullet, name, message)$/;"	f
+s:git_validate	plug.vim	/^function! s:git_validate(spec, check_branch)$/;"	f
+s:git_version_requirement	plug.vim	/^function! s:git_version_requirement(...)$/;"	f
+s:glob	plug.vim	/^function! s:glob(from, pattern)$/;"	f
+s:glob_dir	plug.vim	/^function! s:glob_dir(path)$/;"	f
+s:hash_match	plug.vim	/^function! s:hash_match(a, b)$/;"	f
+s:infer_properties	plug.vim	/^function! s:infer_properties(name, repo)$/;"	f
+s:install	plug.vim	/^function! s:install(force, names)$/;"	f
+s:is_local_plug	plug.vim	/^  function! s:is_local_plug(repo)$/;"	f
+s:is_managed	plug.vim	/^function! s:is_managed(name)$/;"	f
+s:is_preview_window_open	plug.vim	/^function! s:is_preview_window_open()$/;"	f
+s:is_updated	plug.vim	/^function! s:is_updated(dir)$/;"	f
+s:is_win	plug.vim	/^let s:is_win = has('win32')$/;"	v
+s:job_abort	plug.vim	/^function! s:job_abort()$/;"	f
+s:job_cb	plug.vim	/^function! s:job_cb(fn, job, ch, data)$/;"	f
+s:job_exit_cb	plug.vim	/^function! s:job_exit_cb(self, data) abort$/;"	f
+s:job_out_cb	plug.vim	/^function! s:job_out_cb(self, data) abort$/;"	f
+s:last_non_empty_line	plug.vim	/^function! s:last_non_empty_line(lines)$/;"	f
+s:last_rtp	plug.vim	/^let s:last_rtp  = s:escrtp(get(s:split_rtp(), -1, ''))$/;"	v
+s:lastline	plug.vim	/^function! s:lastline(msg)$/;"	f
+s:lazy	plug.vim	/^function! s:lazy(plug, opt)$/;"	f
+s:lines	plug.vim	/^function! s:lines(msg)$/;"	f
+s:list_commits	init.vim	/^        function! s:list_commits()$/;"	f
+s:load_plugin	plug.vim	/^function! s:load_plugin(spec)$/;"	f
+s:loaded	plug.vim	/^let s:loaded = get(s:, 'loaded', {})$/;"	v
+s:loaded_names	plug.vim	/^function! s:loaded_names()$/;"	f
+s:lod	plug.vim	/^function! s:lod(names, types, ...)$/;"	f
+s:lod_cmd	plug.vim	/^function! s:lod_cmd(cmd, bang, l1, l2, args, names)$/;"	f
+s:lod_ft	plug.vim	/^function! s:lod_ft(pat, names)$/;"	f
+s:lod_map	plug.vim	/^function! s:lod_map(map, names, with_prefix, prefix)$/;"	f
+s:log	plug.vim	/^function! s:log(bullet, name, lines)$/;"	f
+s:log4	plug.vim	/^function! s:log4(name, msg)$/;"	f
+s:logpos	plug.vim	/^function! s:logpos(name)$/;"	f
+s:lpad	plug.vim	/^function! s:lpad(str, len)$/;"	f
+s:mac_gui	plug.vim	/^let s:mac_gui = has('gui_macvim') && has('gui_running')$/;"	v
+s:me	plug.vim	/^let s:me = resolve(expand('<sfile>:p'))$/;"	v
+s:names	plug.vim	/^function! s:names(...)$/;"	f
+s:new_window	plug.vim	/^function! s:new_window()$/;"	f
+s:nvim	plug.vim	/^let s:nvim = has('nvim-0.2') || (has('nvim') && exists('*jobwait') && !s:is_win)$/;"	v
+s:nvim_cb	plug.vim	/^function! s:nvim_cb(job_id, data, event) dict abort$/;"	f
+s:parse_options	plug.vim	/^function! s:parse_options(arg)$/;"	f
+s:path	plug.vim	/^  function! s:path(path)$/;"	f
+s:plug_buf	plug.vim	/^let s:plug_buf = get(s:, 'plug_buf', -1)$/;"	v
+s:plug_src	plug.vim	/^let s:plug_src = 'https:\/\/github.com\/junegunn\/vim-plug.git'$/;"	v
+s:plug_tab	plug.vim	/^let s:plug_tab = get(s:, 'plug_tab', -1)$/;"	v
+s:plug_window_exists	plug.vim	/^function! s:plug_window_exists()$/;"	f
+s:prepare	plug.vim	/^function! s:prepare(...)$/;"	f
+s:preview_commit	plug.vim	/^function! s:preview_commit()$/;"	f
+s:progress_bar	plug.vim	/^function! s:progress_bar(line, bar, total)$/;"	f
+s:progress_opt	plug.vim	/^function! s:progress_opt(base)$/;"	f
+s:reap	plug.vim	/^function! s:reap(name)$/;"	f
+s:regress_bar	plug.vim	/^function! s:regress_bar()$/;"	f
+s:reload_plugins	plug.vim	/^function! s:reload_plugins()$/;"	f
+s:remove_rtp	plug.vim	/^function! s:remove_rtp()$/;"	f
+s:remove_triggers	plug.vim	/^function! s:remove_triggers(name)$/;"	f
+s:reorg_rtp	plug.vim	/^function! s:reorg_rtp()$/;"	f
+s:retry	plug.vim	/^function! s:retry()$/;"	f
+s:revert	plug.vim	/^function! s:revert()$/;"	f
+s:rm_rf	plug.vim	/^function! s:rm_rf(dir)$/;"	f
+s:rtp	plug.vim	/^  function! s:rtp(spec)$/;"	f
+s:section	plug.vim	/^function! s:section(flags)$/;"	f
+s:setupWrapping	.vimrc	/^  function s:setupWrapping()$/;"	f
+s:shellesc	plug.vim	/^function! s:shellesc(arg)$/;"	f
+s:shellesc_cmd	plug.vim	/^function! s:shellesc_cmd(arg)$/;"	f
+s:snapshot	plug.vim	/^function! s:snapshot(force, ...) abort$/;"	f
+s:source	plug.vim	/^function! s:source(from, ...)$/;"	f
+s:spawn	plug.vim	/^function! s:spawn(name, cmd, opts)$/;"	f
+s:split_rtp	plug.vim	/^function! s:split_rtp()$/;"	f
+s:status	plug.vim	/^function! s:status()$/;"	f
+s:status_load	plug.vim	/^function! s:status_load(lnum)$/;"	f
+s:status_update	plug.vim	/^function! s:status_update() range$/;"	f
+s:switch_in	plug.vim	/^function! s:switch_in()$/;"	f
+s:switch_out	plug.vim	/^function! s:switch_out(...)$/;"	f
+s:syntax	plug.vim	/^function! s:syntax()$/;"	f
+s:system	plug.vim	/^function! s:system(cmd, ...)$/;"	f
+s:system_chomp	plug.vim	/^function! s:system_chomp(...)$/;"	f
+s:tick	plug.vim	/^function! s:tick()$/;"	f
+s:to_a	plug.vim	/^function! s:to_a(v)$/;"	f
+s:to_s	plug.vim	/^function! s:to_s(v)$/;"	f
+s:triggers	plug.vim	/^let s:triggers = get(s:, 'triggers', {})$/;"	v
+s:trim	plug.vim	/^function! s:trim(str)$/;"	f
+s:update	plug.vim	/^function! s:update(force, names)$/;"	f
+s:update_finish	plug.vim	/^function! s:update_finish()$/;"	f
+s:update_impl	plug.vim	/^function! s:update_impl(pull, force, args) abort$/;"	f
+s:update_python	plug.vim	/^function! s:update_python()$/;"	f
+s:update_ruby	plug.vim	/^function! s:update_ruby()$/;"	f
+s:update_vim	plug.vim	/^function! s:update_vim()$/;"	f
+s:upgrade	plug.vim	/^function! s:upgrade()$/;"	f
+s:upgrade_specs	plug.vim	/^function! s:upgrade_specs()$/;"	f
+s:version_requirement	plug.vim	/^function! s:version_requirement(val, min)$/;"	f
+s:vim8	plug.vim	/^let s:vim8 = has('patch-8.0.0039') && exists('*job_start')$/;"	v
+s:warn	plug.vim	/^function! s:warn(cmd, msg)$/;"	f
+s:with_cd	plug.vim	/^function! s:with_cd(cmd, dir)$/;"	f
+setup	install.sh	/^setup() {$/;"	f
+t	.tmux.conf	/^bind-key -r C-h select-window -t :-$/;"	k
+t	.tmux.conf	/^bind-key -r C-l select-window -t :+$/;"	k
+vimplug_exists	.vimrc	/^let vimplug_exists=expand('~\/.vim\/autoload\/plug.vim')$/;"	v
+vimrc	.vimrc	/^augroup vimrc-javascript$/;"	a
+vimrc	.vimrc	/^augroup vimrc-python$/;"	a
+vimrc	.vimrc	/^augroup vimrc-remember-cursor-position$/;"	a
+vimrc	.vimrc	/^augroup vimrc-sync-fromstart$/;"	a
+vimrc	.vimrc	/^augroup vimrc-wrapping$/;"	a
+˚	init.vim	/^    inoremap ˚ <Esc>:m .-2<cr>==gi$/;"	m
+˚	init.vim	/^    nnoremap ˚ :m .-2<cr>==$/;"	m
+˚	init.vim	/^    vnoremap ˚ :m '<-2<cr>gv=gv$/;"	m
+∆	init.vim	/^    inoremap ∆ <Esc>:m .+1<cr>==gi$/;"	m
+∆	init.vim	/^    nnoremap ∆ :m .+1<cr>==$/;"	m
+∆	init.vim	/^    vnoremap ∆ :m '>+1<cr>gv=gv$/;"	m
