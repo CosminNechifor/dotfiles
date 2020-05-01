@@ -38,6 +38,7 @@ call plug#begin('~/.config/nvim/plugged')
     " set number relativenumber
     set history=1000 " change history to 1000
     set textwidth=120
+    set relativenumber
 
     set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
     set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
@@ -289,7 +290,7 @@ call plug#begin('~/.config/nvim/plugged')
     map <silent> <C-k> :call functions#WinMove('k')<cr>
     map <silent> <C-l> :call functions#WinMove('l')<cr>
 
-    map <C-w> :wincmd q<cr>
+    map <C-w> :q<cr>
 	
     " move line mappings
     " ∆ is <A-j> on macOS
@@ -502,7 +503,7 @@ call plug#begin('~/.config/nvim/plugged')
 
         nmap <silent> <leader>s :GFiles?<cr>
         nmap <silent> <leader>b :Buffers<cr>
-		nmap <silent> <leader>r :BTags<cr>
+	      nmap <silent> <leader>r :BTags<cr>
         nmap <silent> <leader>rr :Semshi rename<CR>
         " nmap <silent> <C-p> :FZF<cr>
         nmap <leader><tab> <plug>(fzf-maps-n)
@@ -676,8 +677,8 @@ call plug#begin('~/.config/nvim/plugged')
     let g:tern#command = ["tern"]
     let g:tern#arguments = [" — persistent"]
 
-	  " this depends on deoplete
-	  Plug 'ervandew/supertab'
+    " this depends on deoplete
+    Plug 'ervandew/supertab'
     let g:SuperTabDefaultCompletionType = "<c-n>"
 
     Plug 'mileszs/ack.vim'
